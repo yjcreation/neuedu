@@ -1,0 +1,6 @@
+spring:
+  profiles:
+    active: dev
+
+jdbc:
+  url: http://localhost:3306
