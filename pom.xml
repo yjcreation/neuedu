@@ -111,6 +111,14 @@
 			<version>1.2.13</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/com.alipay.sdk/alipay-sdk-java -->
+<!--		app支付服务端sdk-->
+		<dependency>
+			<groupId>com.alipay.sdk</groupId>
+			<artifactId>alipay-sdk-java</artifactId>
+			<version>4.8.103.ALL</version>
+		</dependency>
+
 
 	</dependencies>
 

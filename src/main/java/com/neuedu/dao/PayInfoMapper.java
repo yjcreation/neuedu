@@ -1,6 +1,8 @@
 package com.neuedu.dao;
 
 import com.neuedu.pojo.PayInfo;
+import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
 public interface PayInfoMapper {
@@ -43,4 +45,7 @@ public interface PayInfoMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(PayInfo record);
+
+    //根据订单编号来查询支付信息
+    PayInfo selectByOrderNo(@Param("orderNo") Long orderNo);
 }

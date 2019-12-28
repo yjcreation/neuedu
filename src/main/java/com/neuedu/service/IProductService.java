@@ -13,4 +13,10 @@ public interface IProductService {
 
     public ServerResponse findProductById(Integer productId);
 
+
+    /**
+     * 根据商品id更新库存
+     * */
+    public ServerResponse updateProductStock(int productId,int stock);
+
 }

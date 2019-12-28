@@ -27,6 +27,7 @@ public class UserController
        ServerResponse serverResponse= userService.loginLogic(username, password);
        if(serverResponse.isSucess()){
            session.setAttribute(Const.CURRENT_USER,serverResponse.getData());
+           //System.out.println("session="+session);
        }
        return serverResponse;
 

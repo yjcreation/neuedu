@@ -68,6 +68,16 @@ public class ProductServiceImpl implements IProductService{
         return ServerResponse.createServerResponseBySucess(product);
     }
 
+    @Override
+    public ServerResponse updateProductStock(int productId, int stock) {
+
+      int count= productMapper.updateProductStock(productId,stock);
+      if(count==0){
+          return ServerResponse.createServerResponseByFail(ResponseCode.PRODUCT_STOCK_UPDATE_FAIL.getCode(),ResponseCode.PRODUCT_STOCK_UPDATE_FAIL.getMsg());
+      }
+        return ServerResponse.createServerResponseBySucess();
+    }
+
 
     private ProductListVO product2ProductListVO(Product product){
 

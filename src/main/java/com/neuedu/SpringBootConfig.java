@@ -20,13 +20,17 @@ public class SpringBootConfig  implements WebMvcConfigurer{
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
 
-         List<String> includeUrl=new ArrayList<>();
-         includeUrl.add("/portal/user/**");
+        List<String> includeUrl=new ArrayList<>();
+        includeUrl.add("/portal/user/**");
         includeUrl.add("/portal/cart/**");
+        includeUrl.add("/portal/order/**");
+        includeUrl.add("/portal/shipping/**");
+        includeUrl.add("/portal/pay/**");
 
         List<String> exclueUrl=new ArrayList<>();
         exclueUrl.add("/portal/user/login.do");
         exclueUrl.add("/portal/user/register.do");
+        exclueUrl.add("/portal/pay/callback.do");
 
         registry.addInterceptor(portalLoginCheckInterceptor).addPathPatterns(includeUrl) //添加需要拦截的路径
                 .excludePathPatterns(exclueUrl); //排除不需要拦截的路径
